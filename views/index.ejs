@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-container container col-12">
+
+        <form class="needs-validation" novalidate action="/" method="post" id="form">
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            This field is empty
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <div class="invalid-feedback">
+                        It's not a valid email
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        At least 8 characters in password
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="password2">Confirm password</label>
+                    <input type="password" class="form-control" id="password2" placeholder="Confirm password" required>
+                    <div class="invalid-feedback">
+                        Passwords are not equal
+                    </div>
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" id="validate" value="Submit form">
+        </form>
+
+    </div>
+    <div class="table-container container col-12">
+        <h2>All users</h2>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password hash</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% data.forEach(function (item) { %>
+                <tr>
+                    <td>@<%= item['username'] %></td>
+                    <td><%= item['email'] %></td>
+                    <td><%= item['password'] %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
