@@ -54,6 +54,18 @@
         </form>
 
     </div>
+
+    <div class="message-container container col-12">
+        <form action="/sendEmails" method="post">
+            <div class="form-group">
+                <label for="message">Messag</label>
+                <input class="form-control" id="message" aria-describedby="msgHelp" placeholder="Enter message" name="msg">
+                <small id="msgHelp" class="form-text text-muted">Enter message that you want to send to all of your users.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message!</button>
+        </form>
+    </div>
+
     <div class="table-container container col-12">
         <h2>All users</h2>
         <table class="table table-hover">
