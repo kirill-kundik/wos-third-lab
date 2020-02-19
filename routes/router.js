@@ -7,8 +7,8 @@ let nodemailer = require('nodemailer').createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'goliathusua@gmail.com',
-        pass: '5654314kkv'
+        user: '',
+        pass: ''
     }
 });
 
